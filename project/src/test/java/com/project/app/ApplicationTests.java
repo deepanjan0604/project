@@ -1,4 +1,4 @@
-package com.dhboa.tms;
+package com.project.app;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
