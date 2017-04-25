@@ -1,0 +1,103 @@
+
+.container::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.container::-webkit-scrollbar {
+	width: 7px;
+	margin-left: -12px;
+}
+
+.container::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+	background-color: #512da8;
+}
+
+
+.commentlist-and-filelist::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	background-color: white;
+}
+
+.commentlist-and-filelist::-webkit-scrollbar {
+	width: 7px;
+	margin-left: -12px;
+}
+
+.commentlist-and-filelist::-webkit-scrollbar-thumb {
+	border-bottom-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+	background-color: #777;
+}
+
+#edittaskcontainer::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	background-color: white;
+}
+
+#edittaskcontainer::-webkit-scrollbar {
+	width: 7px;
+	margin-left: -12px;
+}
+
+#edittaskcontainer::-webkit-scrollbar-thumb {
+	border-bottom-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+	background-color: #777;
+}
+
+
+#tasklist::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	background-color: white;
+}
+
+#tasklist::-webkit-scrollbar {
+	width: 7px;
+	margin-left: -12px;
+}
+
+#tasklist::-webkit-scrollbar-thumb {
+	border-bottom-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+	background-color: #777;
+}
+
+.history-content::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	background-color: white;
+}
+
+.history-content::-webkit-scrollbar {
+	width: 7px;
+	margin-left: -12px;
+}
+
+.history-content::-webkit-scrollbar-thumb {
+	border-bottom-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+	background-color: #777;
+}
+#drop-down::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	background-color: white;
+}
+
+#drop-down::-webkit-scrollbar {
+	width: 7px;
+	margin-left: -12px;
+}
+
+#drop-down::-webkit-scrollbar-thumb {
+	border-bottom-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+	background-color: #777;
+}

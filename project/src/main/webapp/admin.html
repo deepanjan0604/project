@@ -1,0 +1,251 @@
+<style>
+.glyphicon-remove {
+	color: red;
+}
+
+.glyphicon-ok {
+	color: green;
+}
+
+.dropdown-list {
+	border-radius: 2px;
+	position: relative;
+}
+
+.dropdown-list:hover {
+	/* background-color: #337ab7; */
+	bacground-color: none;
+}
+
+.erroralert {
+	font-family: sans-serif;
+	font-weight: bold;
+	color: red;
+}
+
+.successalert {
+	font-family: sans-serif;
+	font-weight: bold;
+	color: green;
+}
+</style>
+<div ng-controller="userscontroller" ng-show="isAuthenticated"
+	class="container">
+
+	<toast></toast>
+
+	<div class="row">
+
+
+
+		<div class="modal fade" tabindex="-1" role="dialog" id="newuser"
+			style="display: none;">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title">Add User</h4>
+					</div>
+					<div class="modal-body">
+
+
+						<div class="panel-body">
+							<div class="form-group required">
+								<label for="name" class="control-label">Name</label> <input
+									class="form-control input-sm" name="name" type="text"
+									ng-model="userdata.name" required placeholder="Enter your name" />
+							</div>
+							<div class="form-group required ">
+								<label for="username" class="">Username</label><input
+									class="form-control input-sm username" name="username"
+									type="text" ng-model="userdata.username" required
+									placeholder="Enter username" />
+								<p class="erroralert">
+									<span class={{useralerticon}}></span>{{alertmessage}}
+								</p>
+
+							</div>
+							<div class="form-group required">
+								<label for="email" class="control-label">Email</label> <input
+									class="form-control input-sm" name="email" type="email"
+									ng-model="userdata.email" ng-keypress="checkForEmail(userdata.email)" required
+									placeholder="xyz@company.com" />
+							
+								<p class={{mailalertClass}}>
+									<span class={{mailalerticon}}></span>{{mail}}
+								</p>
+							</div>
+							<div class="row ">
+								<div class="form-group " align="center">
+									<button type="submit" class="btn btn-success"
+										data-dismiss="modal" ng-disabled="validEmail"
+										ng-click="addUser()" data-loading-text="Saving..."
+										id="btnSave">
+										<span class="glyphicon glyphicon-floppy-disk"></span>&nbsp&nbsp
+										Save
+									</button>
+									<button type="submit" class="btn default"
+										ng-disabled="isFormInvalid()" id="btnCancel"
+										ng-click="createuserdiv=false;resetAddingUserForm()"
+										data-dismiss="modal">
+										<span class="glyphicon glyphicon-remove" style="color: white"></span>&nbsp&nbsp
+										Cancel
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="col-sm-12">
+			<div class="col-md-8" id="cuserlink">
+				<span class="glyphicon glyphicon-plus"></span> <a
+					style="cursor: pointer" data-toggle="modal" data-target="#newuser"
+					class="primary-color" data-toggle="tooltip" data-placement="right"
+					title="Click here to add a user">Add New User</a>
+			</div>
+			<div class="col-sm-4">
+				<div ng-hide="createuserdiv">
+					<input type="text" placeholder="type here" class="search "
+						ng-model="searchText" ng-change="loadUsers()">
+					<button type="button"
+						class="glyphicon glyphicon-search searchGlyphicon"
+						ng-click="loadUsers()"></button>
+				</div>
+			</div>
+		</div>
+		<table class="table table-hover" style="margin-top: 58px">
+			<tr>
+				<th class="thead">Name</th>
+				<th class="thead">UserName</th>
+				<th class="thead">Email Address</th>
+				<th class="thead">Status</th>
+				<th class="thead">Role</th>
+				<th class="thead">Action</th>
+				<th class="thead"></th>
+				<th class="thead"></th>
+
+			</tr>
+			<tr ng-repeat="user in userList">
+				<td>{{user.data.name}}</td>
+				<td>{{user.data.username}}</td>
+				<td>{{user.data.email}}</td>
+				<td>{{user.data.status}}</td>
+				<td>{{user.role.roleType}}</td>
+				<td>
+					
+
+					<div class="dropdown-list" ng-hide="user.data.status=='INACTIVE'">
+						<a role="button" class="dropdown-toggle" id="menu1"
+							data-toggle="dropdown">Options <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+							<li role="presentation"><a role="menuitem" tabindex="-1"
+								data-toggle="modal" data-target="#edituser"
+								ng-click="edit($index)"><span
+									class="glyphicon glyphicon-pencil" style="color: #512da8"></span>Edit</a></li>
+							<li role="presentation" ng-hide="user.data.status=='ACTIVE'"><a
+								role="menuitem" tabindex="-1"
+								ng-click="resendActivationLink(user.data.id)"><span
+									class="glyphicon glyphicon-share-alt" style="color: #512da8"></span>&nbsp;Resend
+									Activation</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1"
+								ng-click="resetPassword(user.data.id)"><span
+									class="glyphicon glyphicon-retweet" style="color: #512da8"></span>&nbsp;Reset
+									Password</a></li>
+						</ul>
+					</div>
+				</td>
+
+				<td><a role="button" style="color: #512da8"
+					ng-click="deactivate(user.data.id)"
+					ng-show="user.role.roleType=='user' && user.data.status=='ACTIVE' ">Deactivate</a>
+					<a role="button" style="color: #512da8"
+					ng-click="activate(user.data.id)"
+					ng-show="user.role.roleType=='user' && user.data.status=='INACTIVE'">Activate</a>
+
+				</td>
+				<td>
+					<div>
+						<a
+							ng-show="user.role.roleType=='user' && user.data.status=='INACTIVE'"
+							href="" style="color: red" data-toggle="tooltip"
+							data-placement="left" title="User InActive" id="cuserlink"><span
+							class="glyphicon glyphicon-exclamation-sign"></span></a>
+					</div>
+				</td>
+
+			</tr>
+		</table>
+
+		<div class="modal fade" tabindex="-1" role="dialog" id="edituser"
+			style="display: none;">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title">Edit User</h4>
+					</div>
+					<div class="modal-body">
+
+						<form name="editform" autocomplete="off" novalidate>
+
+							Name: <input type="text" name="name" class="form-control"
+								ng-model="editedUser.data.name" ng-required="true" /> <span
+								style="color: red"
+								ng-show="editform.name.$dirty && editform.name.$error.required">
+								Name is Required</span> <br> UserName: <input type="text"
+								name="username" class="form-control"
+								ng-model="editedUser.data.username" ng-required="true"
+								readonly="readonly" /> <span style="color: red"
+								ng-show="editform.username.$dirty && editform.username.$error.required">UserName
+								is Required </span> <br> Email: <input type="email" name="email"
+								class="form-control" ng-model="editedUser.data.email"
+								ng-keyup="checkForEmail(editedUser.data.email)" ng-required="true" />
+						
+							<p class={{mailalertClass}}>
+								<span class={{mailalerticon}}></span>{{mail}}
+							</p>
+							 Role: <select class="form-control"
+								name="role" ng-model="editedUser.role.roleType"
+								ng-required="true">
+								<option value="admin">admin</option>
+								<option value="user">user</option>
+
+							</select> <span style="color: red"
+								ng-show="editform.role.$dirty &&  editform.role.$error.required">
+								Role is Required!</span> <br />
+							<div class="row ">
+								<div class="form-group " align="center">
+									<button class="btn btn-success" type="submit"
+										ng-click="updateUser()" ng-disabled="editform.$invalid"
+										data-dismiss="modal">&nbsp&nbsp Save</button>
+									<a type="button" ng-click="resetAddingUserForm()"class="btn btn-default" data-dismiss="modal">&nbsp&nbsp
+										Cancel</a>
+								</div>
+							</div>
+						</form>
+					</div>
+
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal -->
+
+
+
+
+		</div>
+
+	</div>

@@ -1,0 +1,354 @@
+/* .dh-tag-ctn {
+	border: 1px inset #ccc;
+	padding: 5px 3px;
+	display: inline-block;
+	width: 500px;
+	border-radius: 3px;
+	box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075);
+	height: 32px;
+}
+
+.dh-tag-ctn-view {
+	padding: 2px 3px;
+	display: inline-block;
+	width: 500px;
+	border-radius: 3px;
+	box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075);
+	background-color:  rgba(0,0,0,.075);
+}
+
+.dh-tag-ctn input {
+	display: inline-block;
+	float: left;
+	height: 18px;
+	padding: 6px 4px;
+	font-size: 13px;
+	line-height: 18px;
+	color: black;
+	border: 0px;
+	margin: 2px;
+	background-color: #eee;
+}
+
+.dh-tag-ctn input:focus {
+	outline: 0;
+	box-shadow: 0px;
+}
+
+.inner-addon {
+	position: relative;
+}
+
+.inner-addon .glyphicon {
+	position: absolute;
+	padding: 10px;
+	pointer-events: none;
+}
+align icon
+.left-addon .glyphicon {
+	left: 0px;
+}
+
+.right-addon .glyphicon {
+	right: 0px;
+}
+add padding 
+.left-addon input {
+	padding-left: 30px;
+}
+
+.right-addon input {
+	padding-right: 30px;
+}
+
+.input-tag.ng-scope-true {
+	background-color: red;
+}
+
+.dh-tag-ctn .form-control {
+	display: block;
+	width: 70%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
+		ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
+		.15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.dh-tag-ctn .input-tag {
+	padding: 1px 7px;
+	height: 22px;
+	font-size: 14px;
+	font-weight: 200;
+	background-color: #FCF8E3;
+	display: -webkit-box;
+	float: left;
+	border-radius: 9px;
+	margin: -1px 4px 0px 1px;
+	border: 1px solid #a9b6d2;
+}
+
+.dh-tag-ctn-view .input-tag {
+	padding: 7px 7px;
+	line-height: 12px;
+	font-size: 14px;
+	font-weight: 200;
+	background-color: #e3eaf6;
+	display: -webkit-box;
+	float: left;
+	border-radius: 9px;
+	margin: 2px 5px 2px 0px;
+	border: 1px solid #a9b6d2;
+	width:75px;
+}
+
+.dh-tag-ctn .tag {
+	color: red;
+}
+
+.dh-tag-ctn .active-tag-true {
+	border-color: rgba(255, 12, 12, 0.8);
+}
+
+.dh-tag-ctn .input-tag:hover {
+	background-color: #DFF0D8;
+}
+
+.tag:last-of-type {
+	color: rgba(255, 12, 12, 0.8);
+}
+
+.dh-tag-ctn .input-tag .delete-tag {
+	display: inline-block;
+	font-size: 12px;
+	cursor: pointer;
+	padding: 0px 2px;
+}
+
+.dh-tag-ctn .input-tag .delete-tag:hover {
+	background-color: #DFF0D8;
+}
+
+.dh-tag-ctn-view .input-tag .delete-tag {
+	display: inline-block;
+	font-size: 12px;
+	cursor: pointer;
+	padding: 0px 5px;
+}
+
+.dh-tag-ctn-view .input-tag .delete-tag:hover {
+	background-color: rgba(200, 82, 82, 0.7);
+} */
+.dh-tag-ctn {
+	display: inline-block;
+	width: 440px;
+	border-radius: 3px;
+	background-color: transparent;
+}
+
+.dh-tag-ctn-view {
+	padding: 2px 3px;
+	/*  display: inline-block; */
+	width: 440px;
+	border-radius: 3px;
+
+	/*background-color:  rgba(0,0,0,.075);*/
+}
+
+.dh-tag-ctn input {
+	display: inline-block;
+	float: left;
+	height: 18px;
+	padding: 15px 2px;
+	font-size: 13px;
+	line-height: 18px;
+	color: black;
+	border: 0px;
+	margin: 2px;
+	width: 100%;
+	background-color: transparent;
+}
+
+.dh-tag-ctn input:focus {
+	outline: 0;
+	box-shadow: 0px;
+}
+
+.inner-addon {
+	position: relative;
+}
+
+.inner-addon .glyphicon {
+	position: absolute;
+	padding: 10px;
+	pointer-events: none;
+}
+/* align icon */
+.left-addon .glyphicon {
+	left: 0px;
+}
+
+.right-addon .glyphicon {
+	right: 0px;
+}
+/* add padding  */
+.left-addon input {
+	padding-left: 30px;
+}
+
+.right-addon input {
+	padding-right: 30px;
+}
+
+.input-tag.ng-scope-true {
+	background-color: red;
+}
+
+.dh-tag-ctn .form-control {
+	display: block;
+	width: 70%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
+		ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
+		.15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.dh-tag-ctn .input-tag {
+	padding: 7px 7px;
+	line-height: 12px;
+	font-size: 14px;
+	font-weight: 200;
+	background-color: #FCF8E3;
+	display: -webkit-box;
+	float: left;
+	border-radius: 9px;
+	margin: 2px 5px 2px 0px;
+	border: 1px solid #a9b6d2;
+}
+
+.dh-tag-ctn-view .input-tag {
+	padding: 7px 7px;
+	line-height: 12px;
+	font-size: 14px;
+	font-weight: 200;
+	background-color: #e3eaf6;
+	display: -webkit-box;
+	float: left;
+	border-radius: 9px;
+	margin: 2px 5px 2px 0px;
+	border: 1px solid #a9b6d2;
+	/*width:75px;*/
+}
+
+.dh-tag-ctn .tag {
+	color: red;
+}
+
+.dh-tag-ctn .active-tag-true {
+	border-color: rgba(255, 12, 12, 0.8);
+}
+
+.dh-tag-ctn .input-tag:hover {
+	background-color: #DFF0D8;
+}
+
+.tag:last-of-type {
+	color: rgba(255, 12, 12, 0.8);
+}
+
+.dh-tag-ctn .input-tag .delete-tag {
+	display: inline-block;
+	font-size: 12px;
+	cursor: pointer;
+	padding: 0px 2px;
+}
+
+.dh-tag-ctn .input-tag .delete-tag:hover {
+	background-color: #DFF0D8;
+}
+
+.dh-tag-ctn-view .input-tag .delete-tag {
+	display: inline-block;
+	font-size: 12px;
+	cursor: pointer;
+	padding: 0px 5px;
+}
+
+.dh-tag-ctn-view .input-tag .delete-tag:hover {
+	background-color: rgba(200, 82, 82, 0.7);
+}
+
+/* Styles go here */
+.left-panel {
+	float: left;
+}
+
+.left-panel img {
+	width: 48px;
+	height: 48px;
+	vertical-align: middle;
+}
+
+.right-panel {
+	float: left;
+	margin-left: 5px;
+	margin-top: 7px;
+}
+
+.right-panel span:first-child {
+	font-size: 16px;
+}
+
+.right-panel span:nth-child(2) {
+	font-size: 14px;
+	color: gray;
+}
+
+.right-panel span:last-child {
+	display: block;
+	font-size: 14px;
+	font-style: italic;
+}
+
+.btn-cls {
+	float: left;
+	margin-left: 277px;
+	margin-top: 90px;
+}
+
+.tag {
+	padding: 0px 0px 0px 10px;
+	border: 1px solid #dddddd;
+	width: 100%;
+	font-weight: 700;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	resize: none;
+	outline: none;
+	overflow: hidden;
+	height: 33px;
+	background: #f5f5f5 !important;
+	border-radius: 6px !important;
+}

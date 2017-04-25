@@ -1,0 +1,65 @@
+<div role="navigation" class="navbar navbar-default">
+	<div class="container-fluid header">
+		<div class="nav-header ">
+			<div class="collapse navbar-collapse mynav">
+
+				<span class="col-sm-1"><a class="navbar-brand brand">TMS</a></span>
+
+
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container" ng-controller="activateusercontroller">
+	<div class="col-sm-4 col-sm-offset-3" ng-show="success">
+		<form role="form" ng-submit="savePassword()" name="activate"
+			novalidate>
+			<div class="row">
+				<div class="panel panel-default">
+					<div class="page-header text-center">
+						<h3>Set your Password</h3>
+					</div>
+					<div class="panel-body">
+
+						<div class="form-group required">
+							<label for="password" class="control-label">Password</label> <input
+								class="form-control input-sm" name="password" type="password"
+								ng-model="userdata.password" required placeholder="Password" />
+						</div>
+						<div class="form-group required" ng-class="matchPassword()">
+							<label for="password" class="control-label"> Confirm
+								Password </label> <input class="form-control input-sm"
+								name="confirmPassword" type="password"
+								ng-model="confirmPassword" required
+								placeholder="Confirm Password" /><span
+								ng-show="matchPassword()"
+								class="glyphicon glyphicon-remove form-control-feedback"></span>
+						</div>
+						<div ng-show="matchPassword()"
+							style='color: #a94442; padding-bottom: 10px;'>{{passwordDoNotMatchMsg}}</div>
+
+					</div>
+					<div class="row ">
+						<div class="form-group " align="center">
+							<button type="submit" class="btn btn-primary"
+								ng-disabled="isFormInvalid()" data-loading-text="Saving..."
+								id="btnSave">
+								<span class="glyphicon glyphicon-floppy-disk"></span> Save
+							</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</form>
+	</div>
+<div class="col-sm-4 col-sm-offset-3" ng-show="error">
+<div class="alert alert-danger">
+			<strong></strong>&nbsp&nbsp <h4>{{message}}</h4>
+		</div>
+		<div class="alert alert-info">
+			<strong></strong>&nbsp&nbsp <a href="#/"
+				target="_blank">Click here to login and proceed !!</a>
+		</div>
+	</div>
+</div>

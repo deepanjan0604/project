@@ -1,0 +1,93 @@
+.glyphicon-play:before {
+	content: "\e072";
+	color: #fbb906;
+	font-size: 14px;
+	padding-left: 5px;
+	padding-right:3px;
+}
+
+.glyphicon-pause:before {
+	content: "\e073";
+	color: #e44545;
+	font-size: 14px;
+	padding-left: 5px;
+	padding-right:3px;
+}
+
+.glyphicon-ok-circle:before {
+	content: "\e089";
+	color: #5ca77c;
+	font-size: 14px;
+	padding-left: 5px;
+	padding-right:3px;
+}
+
+.glyphicon-one-fine-empty-dot:before {
+	content: "\25cb";
+	font-size: 3em;
+	padding-left: 5px;
+	padding-right:3px;
+}
+.glyphicon-play-circle:before {
+    content: "\e029";
+    font-size: 14px;
+    padding-left: 5px;
+    padding-right:3px;
+}
+.glyphicon-star:before {
+    content: "\e006";
+    font-size: 14px;
+}
+.glyphicon-eye-open:before {
+    content: "\e105";
+    color: #512da8"
+}
+
+.glyphicon-ok-sign:before {
+	color: #5ca77c;
+	font-size: 14px;
+	padding-left: 5px;
+	padding-right:3px;
+}
+.glyphicon-play-circle:before {
+    content: "\e029";
+    color : green;
+    font-size: 14px;
+    padding-left: 5px;
+    padding-right:3px;
+}
+.glyphicon-ban-circle:before {
+    content: "\e090";
+    color:#777;
+    font-size:14px;
+    padding-left:5px;
+}
+
+.glyphicon-folder-open:before {
+    content: "\e118";
+    padding-right: 5px;
+}
+
+.Critical {
+	color: #821000;
+	padding-left: 5px;
+}
+
+.High {
+	color: #cb4e2d;
+	padding-left: 5px;
+}
+
+.Medium {
+	color: #ffd35c;
+	padding-left: 5px;
+}
+
+.Low {
+	color: #ccc;
+	padding-left: 5px;
+}
+.None{
+	color:#999;
+	padding-left:5px;
+}

@@ -1,0 +1,243 @@
+@CHARSET "ISO-8859-1";
+/**
+  * LESS file. It recompiles default.css according to the user given color.
+  *
+  *@author vasu
+  *
+  */
+
+
+/*Default values*/
+
+@topbarcolor : #512DA8;			/*Top navigation bar color*/
+@topbarfontcolor : white; 		/*Font color in top bar*/
+@leftnavfocus : #337AB7;		/*Font color in left navigation bar on focus*/
+@leftnav : #E4E4E4;				/*Left navigation bar color
+#E4E4E4
+#D8D8D8
+#59747a
+*/
+
+/*Panel Headings*/
+@leftnavfont : black;			
+@primarybuttonfocus : #337ab7;	/*Primary button Focus Color*/
+@primarybuttontext : white;		/*Primary button focus text Color*/
+@compute : lighten(@topbarcolor,10%);
+
+/*Colors based on user choice*/
+@primary : @topbarcolor;
+@secondary : @compute;
+@tertiary : lighten(@secondary,10%);
+
+/*List inside panel headings left nav*/
+@fontleftpanel : @tertiary;
+
+/*Primary button colors*/
+@btnborder : @primary;			
+@btnborderhover : @secondary;
+@btncolor : @topbarfontcolor;
+
+
+
+a.dropdownlink{
+	color: @secondary !important;
+	border: none !important;
+}
+
+
+.dropdown-toggle{
+	color: @secondary ;
+}
+
+
+
+input::-moz-focus-inner { 
+  	border: 1px; 
+}
+
+.form-control:focus{
+	box-shadow: 0 0 5px @secondary !important;
+	border-color: @secondary;
+}
+
+.form-control {
+	border-color:  none !important;
+    height:31px;
+}
+
+.input-field-holder {
+    position: relative;
+}
+
+
+*:not(.badge){
+	border-radius: 0px !important;
+}
+
+.form-group.required .control-label:after {
+	content: " *";
+	color: red;
+}
+
+.autocomplete-suggestions {
+	border: 1px solid #999;
+	background: #FFF;
+	overflow: auto;
+}
+
+.highlight {
+	color: #ff0000;
+}
+
+.angucomplete-dropdown {
+	overflow-y: auto;
+	max-height: 200px;
+}
+
+.autocomplete-suggestion {
+	padding: 2px 5px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.autocomplete-selected {
+	background: #F0F0F0;
+}
+
+.autocomplete-suggestions strong {
+	font-weight: normal;
+	color: #3399FF;
+}
+
+.autocomplete-group {
+	padding: 2px 5px;
+}
+
+.autocomplete-group strong {
+	display: block;
+	border-bottom: 1px solid #000;
+}
+
+a[ng-click] {
+	cursor: pointer;
+}
+
+.vertical-space {
+	height: 20px;
+}
+*:not(h4):not(h1):not(h2):not(h3) {
+    font-size: 12px !important;
+}
+
+.no-border {
+	border: none !important;
+}
+
+.no-background {
+	background-color: transparent;
+}
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+	background-color: @tertiary;
+	color: @topbarfontcolor;
+}
+
+
+
+@media ( max-width : 768px) {
+	.left-nav {
+		display: none;
+	}
+	
+}
+.show {
+	display: block;
+}
+
+
+.modal-dialog td>.form-group, .modal-dialog .table {
+	margin-bottom: 0px;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th,
+ .table>tfoot>tr>td, .table>tfoot>tr>th, 
+ .table>thead>tr>td, .table>thead>tr>th{
+	border-top: none !important;
+	border-bottom: 1px solid #dddddd;
+}
+
+#loading-bar-spinner {
+	display:none;
+}
+#loading-bar .bar {
+	background:#FFFFFF;
+}
+#loading-bar .peg {
+	-moz-box-shadow:#FFFFFF 1px 0 6px 1px;
+	-ms-box-shadow:#FFFFFF 1px 0 6px 1px;
+	-webkit-box-shadow:#FFFFFF 1px 0 6px 1px;
+	box-shadow:#FFFFFF 1px 0 6px 1px;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+
+/* Styles for place holder */
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    font-style: italic;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   font-style: italic;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   font-style: italic;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   font-style: italic;
+}
+:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+  font-style: italic;
+}
+
+
+.toast-top-right {
+	top: 62px;
+
+}
+
+.form-group {
+    margin-bottom: 36px;
+}
+
+
+input::-moz-focus-inner { 
+  	border: 1px; 
+}
+
+.form-control:focus{
+	box-shadow: 0 0 5px @secondary !important;
+	border-color: @secondary;
+}
+
+.form-control {
+	border-color:  none !important;
+    height:31px;
+}
+
+
+.btngrp{
+	background: rgba(204, 204, 204, 0.28);
+    padding-left: 64%;
+    padding-top: 17px;
+    margin-top: 73px;
+    height: 67px;
+    width: 100%;
+    float: right;
+}
+/* Pagination Bar Style - End */

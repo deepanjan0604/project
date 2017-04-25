@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="ISO-8859-1">
+<title>CoreTMS</title>
+
+
+<script type="text/javascript" src="lib/js/angular.min.js"></script>
+<script type="text/javascript" src="lib/js/angular-route.js"></script>
+<script type="text/javascript" src="lib/js/jquery.min.js"></script>
+
+<script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="lib/js/angular-ui.min.js"></script>
+
+<script type="text/javascript" src="lib/js/angular-ui-bootstrap.js"></script>
+<script type="text/javascript" src="lib/js/moment.js"></script>
+
+<script type="text/javascript" src="lib/js/datepicker/datepicker.js"></script>
+<script src="lib/js/autocomplete/autocomplete.js"></script>
+<script src="lib/js/tag-input.js"></script>
+<script type="text/javascript" src="lib/js/loading-bar/loading-bar.js"></script>
+<script type="text/javascript" src="lib/js/angular-file-upload.js"></script>
+<script type="text/javascript" src="lib/js/file-saver.js"></script>
+<script type="text/javascript" src="lib/js/ng-tag-input.js"></script>
+<script type="text/javascript" src="lib/js/clipboard.js"></script>
+<script type="text/javascript" src="lib/js/ngclipboard.js"></script>
+<script type="text/javascript"
+	src="lib/js/editable-field/angular-editable-text.js"></script>
+
+<script type="text/javascript"
+	src="lib/js/textarea-autocomplete/mentio.directive.js"></script>
+<script type="text/javascript"
+	src="lib/js/textarea-autocomplete/mentio.service.js"></script>
+<script type="text/javascript" src="lib/js/ng-toast.js"></script>
+<script type="text/javascript" src="lib/js/angular-sanitize.js"></script>
+
+
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="services/commonservices.js"></script>
+<script type="text/javascript" src="services/taskfactory.js"></script>
+<script type="text/javascript" src="services/taskservices.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+
+<script type="text/javascript" src="js/logincontrollers/activateuser.js"></script>
+<script type="text/javascript" src="js/logincontrollers/register.js"></script>
+<script type="text/javascript" src="js/logincontrollers/userregister.js"></script>
+
+
+<script type="text/javascript"
+	src="js/admincontrollers/userscontroller.js"></script>
+
+<script type="text/javascript"
+	src="js/rolescontrollers/adduserrolescontroller.js"></script>
+<script type="text/javascript"
+	src="js/taskcontrollers/taskcontroller.js"></script>
+<script type="text/javascript"
+	src="js/projectcontrollers/projectcontroller.js"></script>
+<script type="text/javascript"
+	src="js/projectcontrollers/createprojectcontroller.js"></script>
+<script type="text/javascript"
+	src="js/rolescontrollers/rolescontroller.js"></script>
+<script type="text/javascript"
+	src="js/taskcontrollers/createtaskcontroller.js"></script>
+<script type="text/javascript"
+	src="js/taskcontrollers/edittaskcontroller.js"></script>
+<script type="text/javascript"
+	src="js/projectcontrollers/editprojectcontroller.js"></script>
+<script type="text/javascript" src="js/preferences.js"></script>
+<script type="text/javascript" src="js/forgotpasswordcontroller.js"></script>
+<script type="text/javascript" src="js/mastercontrollers/addtenant.js"></script>
+<script type="text/javascript"
+	src="js/mastercontrollers/adduserstotenant.js"></script>
+
+<script type="text/javascript"
+	src="js/mastercontrollers/tenantcontroller.js"></script>
+
+<link rel="stylesheet" href="lib/css/bootstrap.min.css">
+<link rel="stylesheet" href="lib/css/fonts.css">
+
+
+<link rel="stylesheet" href="lib/css/loading-bar/loading-bar.css">
+<!-- <link rel="stylesheet" href="lib/js/editable-field/angular-editable-text.css">
+ -->
+<link rel="stylesheet" href="lib/css/datepicker/datepicker.css">
+<link rel="stylesheet" href="css/simple-sidebar.css">
+<link rel="stylesheet" href="lib/css/ng-tag-input.css">
+<link rel="stylesheet" href="css/admin.css">
+
+<link rel="stylesheet" href="css/master-css.css">
+<link rel="stylesheet" href="css/default.css">
+<link rel="stylesheet" href="css/scrollbars.css">
+<link rel="stylesheet" href="css/tasks-list-css.css">
+<link rel="stylesheet" href="css/customglyphicons.css">
+<link rel="stylesheet" href="lib/css/autocomplete/autocomplete.css" />
+<link rel="stylesheet" href="lib/css/ng-toast.css">
+<link rel="stylesheet" href="lib/css/ng-toast-animate.css">
+<link rel="stylesheet" href="lib/css/tag-input.css" />
+<style type="text/css">
+.row {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.linkactive {
+	font-weight: bolder;
+	size: 20px;
+}
+
+.brand {
+	color: white !important;
+}
+
+.header {
+	background-color: #337ab7;
+}
+
+.test:not (.nohover ):hover {
+	border: 1px solid red;
+}
+
+.padding-bottom {
+	padding-bottom: 16%;
+}
+
+.tenant-name {
+	color: white !important;
+	padding-top: 16px;
+	text-decoration: none !important;
+}
+
+.user-role {
+	background: white;
+	color: #337ab7;
+	width: 12%;
+	height: 49px;
+	padding-right: 32px;
+	padding-top: 15px;
+	margin-right: -29px;
+}
+
+.user-role a {
+	text-decoration: none;
+}
+</style>
+
+</head>
+<body ng-app="tmsApp">
+
+	<div ng-controller="indexController" ng-hide="isActivatedUser">
+
+		<div role="navigation" class="navbar navbar-default">
+			<div class="container-fluid header">
+				<button type="button" class="navbar-toggle collapsed pull-left"
+					data-toggle="collapse" data-target="#sidebar-wrapper"
+					ng-click="toggleLeftMenu()">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+
+				<div class="nav-header ">
+					<div class="collapse navbar-collapse mynav">
+
+						<span class="col-sm-1"><a class="navbar-brand brand"
+							href="#/task" ng-show="!sa">TMS</a><a class="navbar-brand brand"
+							href="#/viewtenant" ng-show="sa">TMS</a></span>
+
+						<div class="col-sm-2 pull-right user-role"
+							ng-show="isAuthenticated">
+							<a role="button" class="dropdown-toggle pull-right" id="menu1"
+								data-toggle="dropdown"><span
+								class="glyphicon glyphicon-user"></span><strong>{{response.name}}
+							</strong><span class="caret"></span> </a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+								<li role="presentation"><a role="menuitem" tabindex="-1"
+									ng-click="logout()"><span
+										class="glyphicon glyphicon-log-out" style="color: #512da8"></span>&nbsp;Logout</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-2 pull-right" ng-show="isAuthenticated">
+							<div class="dropdown-list">
+								<a role="button" class="dropdown-toggle pull-right tenant-name"
+									id="menu1" data-toggle="dropdown"><strong>{{response.tenant.tenantName}}</strong></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="sidebar-wrapper" ng-show="isAuthenticated">
+			<ul class="sidebar-nav">
+
+				<li ng-class="{ active: isActive('/project') }" class="hover"><a
+					href="#/project" ng-show="admin||user"><span
+						class="glyphicon glyphicon-folder-open glyphicon"></span>Projects</a></li>
+
+				<li ng-class="{ active: isActive('/task') }" class="hover"><a
+					href="#/task" ng-show="user||admin"><span
+						class="glyphicon glyphicon-tasks glyphicon"></span> Tasks</a></li>
+
+
+
+				<li ng-class="{ active: isActive('/admin') }" class="hover"><a
+					href="#/admin" ng-show="admin" t><span
+						class="glyphicon glyphicon-user glyphicon"></span>Users</a></li>
+				<li ng-class="{ active: isActive('/projectroles') }" class="hover"><a
+					href="#/projectroles" ng-show="admin"><span
+						class="glyphicon glyphicon-plus glyphicon"></span>Add Roles</a></li>
+
+
+				<h4 style="padding-left: opx" ng-show="user || admin">Projects</h4>
+				<ul ng-show="user || admin" class="projectlist" ng-hide="true">
+					<li ng-repeat="p in projects" class="hover-none"
+						ng-class="{ linkactive: isActive('/project/{{p.project.projectId}}/tasks') }"><a
+						ng-class="{linkactive: isActive('/project/{{p.project.projectId}}/tasks') }"
+						ng-click="getProjectRoleAuthorities(p.project.projectId)"
+						href="#/project/{{p.project.projectId}}/tasks"
+						ng-click="getTaskByProject()">{{p.project.projectName}}</a></li>
+
+				</ul>
+
+
+				<li ng-class="{active : isActive('/viewtenant')}" class="hover"><a
+					ng-show="sa" href="#/viewtenant"><span
+						class="glyphicon glyphicon-user glyphicon"></span>View tenant</a></li>
+
+				<li ng-class="{active : isActive('/addtenant')}" class="hover"><a
+					ng-show="sa" href="#/addtenant"><span
+						class="glyphicon glyphicon-plus glyphicon"></span>Add tenant</a></li>
+
+
+				<li ng-class="{ active: isActive('/preferences') }" class="hover"><a
+					href="#/preferences" ng-show="user"><span
+						class="glyphicon glyphicon-cog glyphicon"></span> Preferences</a></li>
+
+
+
+			</ul>
+		</div>
+
+	</div>
+
+
+	<div class="container" ng-controller="loginController"
+		ng-hide="isAuthenticated || isActivatedUser">
+		<div class="col-sm-4 col-sm-offset-3">
+			<form role="form" id="activateform" novalidate>
+				<div class="row">
+					<div class="panel panel-default padding-bottom">
+						<div class="page-header text-center border-none">
+							<h3>Login Page</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group login-formgroup" required>
+								<div class="inner-addon left-addon">
+									<span class="glyphicon glyphicon-user"></span> <input
+										type="email" class="form-control input-sm"
+										ng-keypress="changeState()" placeholder="UserName"
+										ng-model="users.username">
+								</div>
+							</div>
+							<div class="form-group login-formgroup" required>
+								<div class="inner-addon left-addon">
+									<span class="glyphicon glyphicon-lock"></span> <input
+										type="password" class="form-control input-sm"
+										ng-keypress="changeState()" placeholder="Password"
+										ng-model="users.password">
+									<div class="form-group">
+										<h5>
+											<a href="#/forgotpassword">Forgot Password?</a>
+										</h5>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="row">
+							<div class="col-sm-4"></div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary submitBtn"
+									ng-click="login()">Login</button>
+
+								<a href="#/register"><span class="btn btn-primary signupBtn">Sign
+										Up</span></a>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div ng-view></div>
+
+</body>
+</html>

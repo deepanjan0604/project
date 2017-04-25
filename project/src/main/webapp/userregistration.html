@@ -1,0 +1,93 @@
+<style>
+.glyphicon-remove {
+	color: red;
+}
+
+.glyphicon-ok {
+	color: green;
+}
+
+.box {
+	width: 50%;
+	margin-left: 306px;
+	margin-top: -31px;
+}
+
+</style>
+
+<div class="nav-header ">
+	<div class="collapse navbar-collapse mynav">
+	
+		<h4>TMS</h4><div class="col">
+		
+	</div>
+</div>
+<div ng-controller="userregistercontroller">
+	<toast></toast>
+	<div class="col-md-6 col-sm-offset-3">
+
+		<form role="form" ng-submit="registeruser()" name="activate"
+			novalidate>
+			<div class="row">
+				<div class="panel panel-default">
+					<div class="page-header text-center">
+						<h3>{{title}}</h3>
+					</div>
+
+					<div class="panel-body">
+						<div class="form-group required">
+							<label for="name" class="control-label">Name</label> <input
+								class="form-control input-sm" name="name" type="text"
+								ng-model="userdata.name" required placeholder="Enter your name" />
+						</div>
+						<div class="form-group required">
+
+							<label for="username" class="">Username</label><input
+								class="form-control input-sm" name="username" type="text"
+								ng-model="userdata.username" required
+								placeholder="Enter username" /> <input
+								class="form-control input-sm domain box" name="domain"
+								type="text" ng-model="domain" ng-disabled=true required />
+						</div>
+						<div class="form-group required">
+							<label for="email" class="control-label">Email</label> <input
+								class="form-control input-sm" name="email" type="email"
+								ng-model="userdata.email" ng-change="checkForEmail()" required
+								placeholder="xyz@company.com" />
+							<p id='mail'>
+								<span class={{icnClass}}></span>{{mail}}
+							</p>
+						</div>
+						<div class="form-group required">
+							<label for="password" class="control-label">Password</label> <input
+								class="form-control input-sm" name="password" type="password"
+								ng-model="userdata.password" required
+								placeholder="Enter Password" />
+						</div>
+						<div class="form-group required" ng-class="matchPassword()">
+							<label for="password" class="control-label"> Confirm
+								Password </label> <input class="form-control input-sm"
+								name="confirmPassword" type="password"
+								ng-model="confirmPassword" required
+								placeholder="Confirm Password" /><span
+								ng-show="matchPassword()"
+								class="glyphicon glyphicon-remove form-control-feedback"></span>
+						</div>
+						<div ng-show="matchPassword()"
+							style='color: #a94442; padding-bottom: 10px;'>{{passwordDoNotMatchMsg}}</div>
+
+					</div>
+					<div class="row ">
+						<div class="form-group " align="center">
+							<button type="submit" class="btn btn-primary"
+								ng-disabled="isFormInvalid()" data-loading-text="Saving..."
+								id="btnSave">
+								<span class="glyphicon glyphicon-floppy-disk"></span>&nbsp&nbsp
+								Get Started
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
